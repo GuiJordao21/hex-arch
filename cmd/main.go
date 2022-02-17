@@ -1,7 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/GuiJordao21/hex-arch/internal/adapters/core/arithmetic"
+)
 
 func main() {
-	fmt.Println("Ready...\nSet... \nGo!!!")
+	arithAdapter := arithmetic.NewAdapter()
+	result, err := arithAdapter.Addition(3, 1)
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(result)
 }
